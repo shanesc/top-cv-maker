@@ -1,54 +1,25 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import '../styles/Form.css';
+import InputField from './InputField';
 
-export class Form extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      bio: {
-        name: '',
-        title: '',
-        phone: '',
-        email: '',
-        location: ''
-      }
-    };
-  }
-
-  static propTypes = {};
-
-  sentenceCase(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-  }
-
+class Form extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state.bio);
-  };
-
-  handleChange = (key, e) => {
-    this.setState({
-      bio: { ...this.state.bio, [key]: e.target.value }
-    });
   };
 
   render() {
-    const { bio } = this.state;
+    const { bio } = this.props.state;
     return (
       <form onSubmit={this.handleSubmit}>
         {Object.entries(bio).map((property) => {
           const key = property[0];
           return (
-            <label key={key} htmlFor={`bio-${key}`}>
-              {this.sentenceCase(key)}:
-              <input
-                type='text'
-                id={`bio-${key}`}
-                value={bio[key]}
-                onChange={(e) => this.handleChange(key, e)}
-              />
-            </label>
+            <InputField
+              key={key}
+              propKey={key}
+              value={bio[key]}
+              handleChange={this.props.handleChange}
+            />
           );
         })}
         <button type='submit'>Submit</button>
