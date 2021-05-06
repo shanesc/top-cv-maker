@@ -1,0 +1,7 @@
+.view-container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid hsl(200deg 100% 50%);
+  padding: 30px;
+  margin: 20px;
+}
