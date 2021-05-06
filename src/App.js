@@ -13,21 +13,55 @@ class App extends Component {
         phone: '',
         email: '',
         location: ''
-      }
+      },
+      experience: [
+        {
+          id: 1,
+          title: '',
+          organization: '',
+          startDate: '',
+          endDate: '',
+          description: ''
+        },
+        {
+          id: 2,
+          title: '',
+          organization: '',
+          startDate: '',
+          endDate: '',
+          description: ''
+        }
+      ]
     };
   }
 
-  handleChange = (key, e) => {
+  handleBioChange = (id, key, e) => {
     this.setState({
       bio: { ...this.state.bio, [key]: e.target.value }
+    });
+  };
+
+  handleExperienceChange = (id, key, e) => {
+    const updatedStateArray = this.state.experience.map((item) => {
+      if (item.id === id) {
+        item[key] = e.target.value;
+      }
+      return item;
+    });
+    this.setState({
+      experience: updatedStateArray
     });
   };
 
   render() {
     return (
       <div>
-        <Form state={this.state} handleChange={this.handleChange} />
-        <View bio={this.state.bio} />
+        <Form
+          state={this.state}
+          handleBioChange={this.handleBioChange}
+          handleExperienceChange={this.handleExperienceChange}
+        />
+        <View bio={this.state.bio} experience={this.state.experience} />
       </div>
     );
   }

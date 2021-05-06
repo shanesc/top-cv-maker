@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import '../../styles/InputField.css';
 
 function InputField(props) {
-  const { label, value, handleChange } = props;
+  const { label, value, handleChange, arrayId } = props;
   return (
     <label value={value} htmlFor={`bio-${label}`}>
       {label}:
@@ -11,7 +11,7 @@ function InputField(props) {
         type='text'
         id={`bio-${label}`}
         value={value}
-        onChange={(e) => handleChange(label, e)}
+        onChange={(e) => handleChange(Number(arrayId), label, e)}
       />
     </label>
   );
