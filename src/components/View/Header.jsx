@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../../styles/Header.css';
 
 function Header(props) {
   const { name, title, phone, email, location } = props.bio;
   return (
     <div>
-      <h2>Title</h2>
-      {name}
-      {title}
-      {phone}
-      {email}
-      {location}
+      <div className='container'>
+        <span>{name}</span>
+        <span>{title}</span>
+        <span>{phone}</span>
+        <span>{email}</span>
+        <span>{location}</span>
+      </div>
     </div>
   );
 }
