@@ -7,28 +7,22 @@ class App extends Component {
     super();
 
     this.state = {
-      bio: {
+      personalInfo: {
         name: '',
         title: '',
-        phone: '',
-        email: '',
         location: ''
       },
       experience: [
         {
           id: 1,
-          title: '',
-          organization: '',
-          startDate: '',
-          endDate: '',
+          position: '',
+          company: '',
           description: ''
         },
         {
           id: 2,
-          title: '',
-          organization: '',
-          startDate: '',
-          endDate: '',
+          position: '',
+          company: '',
           description: ''
         }
       ]
@@ -58,10 +52,10 @@ class App extends Component {
       <div>
         <Form
           state={this.state}
-          handleBioChange={this.handleBioChange}
-          handleExperienceChange={this.handleExperienceChange}
+          // handleBioChange={this.handleBioChange}
+          // handleExperienceChange={this.handleExperienceChange}
         />
-        <View bio={this.state.bio} experience={this.state.experience} />
+        {/* <View bio={this.state.bio} experience={this.state.experience} /> */}
       </div>
     );
   }
