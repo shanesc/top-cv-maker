@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../../styles/PersonalInfo.css';
-import ExperienceItem from './ExperienceItem';
+import InputGroup from './InputGroup';
 
-class Experience extends Component {
+class ExperienceContainer extends Component {
   constructor() {
     super();
 
@@ -76,14 +76,20 @@ class Experience extends Component {
       <div className='form-field'>
         <h2>Experience</h2>
         {this.state.experience.map((item) => {
-          const { id } = item;
+          const { id, position, company, desc } = item;
           return (
-            <ExperienceItem
-              key={id}
-              item={item}
+            <InputGroup
+              inputs={[
+                { type: 'position', value: position },
+                { type: 'company', value: company },
+                { type: 'desc', value: desc }
+              ]}
               handleInputChange={this.handleInputChange(id)}
-              handleDelClick={this.handleDelClick(id)}
-            />
+            >
+              <button type='button' onClick={this.handleDelClick(id)}>
+                Delete
+              </button>
+            </InputGroup>
           );
         })}
         <button type='button' onClick={this.handleAddClick}>
@@ -94,4 +100,4 @@ class Experience extends Component {
   }
 }
 
-export default Experience;
+export default ExperienceContainer;

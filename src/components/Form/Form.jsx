@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import '../../styles/Form.css';
-import PersonalInfo from './PersonalInfo';
-import Experience from './ExperienceContainer';
+import PersonalInfoContainer from './PersonalInfoContainer';
+import ExperienceContainer from './ExperienceContainer';
 
 class Form extends Component {
   render() {
     return (
       <form>
-        <PersonalInfo />
-        <Experience />
+        <PersonalInfoContainer />
+        <ExperienceContainer />
       </form>
     );
   }
