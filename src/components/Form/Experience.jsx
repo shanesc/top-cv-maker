@@ -56,6 +56,17 @@ class Experience extends Component {
     });
   };
 
+  handleDelClick = (id) => {
+    const experience = this.state.experience;
+    const newExpState = experience.filter((item) => {
+      return item.id === id ? false : true;
+    });
+
+    this.setState({
+      experience: newExpState
+    });
+  };
+
   render() {
     return (
       <div className='form-field'>
@@ -85,7 +96,14 @@ class Experience extends Component {
                 value={desc}
                 handleChange={(e) => this.handleInputChange(e, id)}
               />
-              <button>Delete</button>
+              <button
+                type='button'
+                onClick={(e) => {
+                  this.handleDelClick(id);
+                }}
+              >
+                Delete
+              </button>
             </div>
           );
         })}
