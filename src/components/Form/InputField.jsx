@@ -11,8 +11,8 @@ function InputField(props) {
     handleChange = () => console.log(value)
   } = props;
   return (
-    <label value={value} htmlFor={id}>
-      {label}
+    <label htmlFor={id}>
+      <span className='hidden'>{label}</span>
       <input
         type='text'
         id={id}

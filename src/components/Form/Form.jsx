@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../styles/Form.css';
 import PersonalInfo from './PersonalInfo';
-import Experience from './Experience';
+import Experience from './ExperienceContainer';
 
 class Form extends Component {
   render() {
