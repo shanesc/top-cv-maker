@@ -5,13 +5,10 @@ import Experience from './Experience';
 
 class Form extends Component {
   render() {
-    const { personalInfo, experience } = this.props.state;
     return (
       <form>
-        <PersonalInfo info={personalInfo} />
-        {experience.map((item) => {
-          return <Experience info={item} />;
-        })}
+        <PersonalInfo />
+        <Experience />
       </form>
     );
   }
