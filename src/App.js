@@ -1,29 +1,28 @@
 import { Component } from 'react';
-import Form from './components/Form/Form';
-import View from './components/View/View';
+import data from './sample-cv-data';
+import PersonalInfo from './components/View/PersonalInfo';
+import './App.css';
+import ExperienceItem from './components/View/ExperienceItem';
+
+const { personal, experience: experienceList } = data;
 
 class App extends Component {
-  // handleExperienceChange = (id, key, e) => {
-  //   const updatedStateArray = this.state.experience.map((item) => {
-  //     if (item.id === id) {
-  //       item[key] = e.target.value;
-  //     }
-  //     return item;
-  //   });
-  //   this.setState({
-  //     experience: updatedStateArray
-  //   });
-  // };
-
   render() {
     return (
-      <div>
-        <Form
-        // state={this.state}
-        // handleBioChange={this.handleBioChange}
-        // handleExperienceChange={this.handleExperienceChange}
-        />
-        {/* <View bio={this.state.bio} experience={this.state.experience} /> */}
+      <div className='cv-container'>
+        <PersonalInfo {...personal} />
+        {experienceList.map((item) => {
+          const { position, company, startDate, endDate, desc } = item;
+          return (
+            <ExperienceItem
+              heading={position}
+              place={company}
+              startDate={startDate}
+              endDate={endDate}
+              desc={desc}
+            />
+          );
+        })}
       </div>
     );
   }
