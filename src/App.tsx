@@ -3,6 +3,7 @@ import data from './sample-cv-data';
 import PersonalInfo from './components/View/PersonalInfo';
 import './App.css';
 import ExperienceList from './components/View/ExperienceList';
+import Form from './components/Form';
 
 const { personal, description, experience: experienceList } = data;
 const educationList = data.education.map((item) => {
@@ -17,15 +18,20 @@ const educationList = data.education.map((item) => {
 class App extends Component {
   render() {
     return (
-      <div className='cv-container'>
-        <PersonalInfo {...personal} />
-        <div>{description}</div>
-        <ExperienceList
-          heading='work experience'
-          experienceList={experienceList}
-        />
-        <ExperienceList heading='education' experienceList={educationList} />
-      </div>
+      <>
+        <div className='cv-form'>
+          <Form />
+        </div>
+        <div className='cv-container'>
+          <PersonalInfo {...personal} />
+          <div>{description}</div>
+          <ExperienceList
+            heading='work experience'
+            experienceList={experienceList}
+          />
+          <ExperienceList heading='education' experienceList={educationList} />
+        </div>
+      </>
     );
   }
 }
