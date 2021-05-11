@@ -4,7 +4,7 @@ import PersonalInfo from './components/View/PersonalInfo';
 import './App.css';
 import ExperienceList from './components/View/ExperienceList';
 
-const { personal, experience: experienceList } = data;
+const { personal, description, experience: experienceList } = data;
 const educationList = data.education.map((item) => {
   return {
     position: item.course,
@@ -19,6 +19,7 @@ class App extends Component {
     return (
       <div className='cv-container'>
         <PersonalInfo {...personal} />
+        <div>{description}</div>
         <ExperienceList
           heading='work experience'
           experienceList={experienceList}
