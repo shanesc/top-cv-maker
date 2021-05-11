@@ -6,12 +6,14 @@ function InputField(props) {
     // name,
     // handleChange = () => console.log(value)
   } = props;
+  const labelID = `input--${label.split(' ').join('-')}`;
+
   return (
-    <label htmlFor={`input--${label}`}>
+    <label htmlFor={labelID}>
       <span className='hidden'>{label}</span>
       <input
         type='text'
-        id={label}
+        id={labelID}
         placeholder={label}
         // value={value}
         // name={name}
