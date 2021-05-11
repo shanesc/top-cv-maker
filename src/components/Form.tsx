@@ -19,11 +19,19 @@ function Form() {
       </section>
       <section>
         <h2>Work Experience</h2>
-        <InputField label='name' />
-        <InputField label='title' />
-        <InputField label='phone' />
-        <InputField label='email' />
-        <InputField label='location' />
+        <InputField label='company' />
+        <InputField label='position' />
+        <InputField label='start date' />
+        <InputField label='end date' />
+        <InputField label='description' />
+      </section>
+      <section>
+        <h2>Education</h2>
+        <InputField label='course / program' id='input--course' />
+        <InputField label='university' />
+        <InputField label='start date' />
+        <InputField label='end date' />
+        <InputField label='description' />
       </section>
     </form>
   );
