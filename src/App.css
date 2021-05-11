@@ -4,4 +4,5 @@
   height: 842px;
   border-radius: 2px;
   border: 1px solid black;
+  box-shadow: 5px 0 6px 0 hsl(0 0% 0% / 0.2);
 }
