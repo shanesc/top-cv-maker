@@ -37,14 +37,13 @@ class App extends Component<{}, State> {
 
   handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    const personalDetails = {
-      ...this.state.personalDetails,
-      [name]: value
-    };
 
     this.setState((prevState) => ({
       ...prevState,
-      personalDetails
+      personalDetails: {
+        ...prevState.personalDetails,
+        [name]: value
+      }
     }));
   };
 
