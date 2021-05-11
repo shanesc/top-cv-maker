@@ -1,41 +1,10 @@
-import { Component } from 'react';
+import React, { Component, ReactEventHandler } from 'react';
 import data from './sample-cv-data';
 import PersonalInfo from './components/View/PersonalInfo';
 import './App.css';
 import ExperienceList from './components/View/ExperienceList';
 import Form from './components/Form';
-
-interface PersonalDetails {
-  name: string;
-  title: string;
-  phone: string;
-  email: string;
-  location: string;
-}
-
-interface Experience {
-  id: number;
-  position: string;
-  company: string;
-  startDate: string;
-  endDate: string;
-  desc?: string;
-}
-
-interface Education {
-  id: number;
-  course: string;
-  university: string;
-  startDate: string;
-  endDate: string;
-  desc?: string;
-}
-interface State {
-  personalDetails: PersonalDetails;
-  description: string;
-  experience: Experience[];
-  education: Education[];
-}
+import { State } from './models/interface-models';
 
 class App extends Component<{}, State> {
   constructor() {
@@ -66,6 +35,19 @@ class App extends Component<{}, State> {
     }));
   }
 
+  handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    const personalDetails = {
+      ...this.state.personalDetails,
+      [name]: value
+    };
+
+    this.setState((prevState) => ({
+      ...prevState,
+      personalDetails
+    }));
+  };
+
   render() {
     const {
       personalDetails,
@@ -86,7 +68,7 @@ class App extends Component<{}, State> {
     return (
       <>
         <div className='cv-form'>
-          <Form />
+          <Form {...this.state} onChange={this.handleInputChange} />
         </div>
         <div className='cv-container'>
           <PersonalInfo {...personalDetails} />
