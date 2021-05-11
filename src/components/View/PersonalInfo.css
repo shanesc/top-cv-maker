@@ -20,7 +20,6 @@ h2 {
 .heading {
   display: flex;
   flex-direction: column;
-  gap: 8px;
 }
 
 .details-group {
