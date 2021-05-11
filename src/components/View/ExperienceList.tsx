@@ -1,5 +1,5 @@
 import ExperienceItem from './ExperienceItem';
-
+import './ExperienceList.css';
 interface Item {
   position: string;
   company: string;
@@ -9,12 +9,14 @@ interface Item {
 }
 
 interface Props {
+  heading: string;
   experienceList: Item[];
 }
 
-function ExperienceList({ experienceList }: Props) {
+function ExperienceList({ heading, experienceList }: Props) {
   return (
-    <div>
+    <div className='experience-list'>
+      {heading ? <h3>{heading}</h3> : null}
       {experienceList.map((item) => {
         const { position, company, startDate, endDate, desc } = item;
         return (
