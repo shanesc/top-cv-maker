@@ -1,3 +1,5 @@
+import './ExperienceItem.css';
+
 interface Props {
   heading: string;
   place: string;
@@ -8,7 +10,7 @@ interface Props {
 
 function ExperienceItem({ heading, place, startDate, endDate, desc }: Props) {
   return (
-    <div>
+    <div className='experience'>
       <div className='experience__heading'>
         <h4>{heading}</h4>
         <div className='experience__details'>

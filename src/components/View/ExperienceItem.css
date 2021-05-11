@@ -1,0 +1,30 @@
+.experience {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.experience__heading {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h4,
+.experience__details {
+  color: var(--grey);
+}
+
+.experience__details {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.bold {
+  font-weight: 600;
+}
