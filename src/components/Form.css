@@ -1,0 +1,61 @@
+/* Reset */
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling */
+form {
+  width: 500px;
+  border: 2px solid hsl(202, 60%, 50%);
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+input,
+textarea {
+  border: 1px solid var(--grey);
+  border-radius: 3px;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+label {
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+}
+
+input::placeholder {
+  text-transform: capitalize;
+}
+
+.hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+}

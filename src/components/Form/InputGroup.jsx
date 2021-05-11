@@ -1,5 +1,5 @@
 import React from 'react';
-import InputField from './InputField';
+import InputField from '../../InputField';
 import PropTypes from 'prop-types';
 
 function InputGroup(props) {
