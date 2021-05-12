@@ -1,4 +1,4 @@
-import React, { Component, ReactEventHandler } from 'react';
+import React, { Component } from 'react';
 import data from './sample-cv-data';
 import PersonalInfo from './components/View/PersonalInfo';
 import './App.css';

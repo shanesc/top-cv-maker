@@ -1,4 +1,4 @@
-import InputField from '../InputField';
+import InputField from './InputField';
 import './Form.css';
 import { State } from '../models/interface-models';
 import React from 'react';
