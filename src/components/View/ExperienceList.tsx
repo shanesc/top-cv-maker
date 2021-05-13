@@ -17,10 +17,11 @@ function ExperienceList({ heading, experienceList }: Props) {
   return (
     <div className='experience-list'>
       {heading ? <h3>{heading}</h3> : null}
-      {experienceList.map((item) => {
+      {experienceList.map((item, index) => {
         const { position, company, startDate, endDate, desc } = item;
         return (
           <ExperienceItem
+            key={index}
             heading={position}
             place={company}
             startDate={startDate}

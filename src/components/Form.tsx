@@ -69,7 +69,7 @@ function Form({
         {experience.map((item, index) => {
           const { company, position, startDate, endDate, desc } = item;
           return (
-            <div>
+            <div key={index}>
               <InputField
                 label='company'
                 value={company}
@@ -111,7 +111,7 @@ function Form({
         {education.map((item, index) => {
           const { course, university, startDate, endDate, desc } = item;
           return (
-            <div>
+            <div key={index}>
               <InputField
                 label='course / program'
                 id='input--course'

@@ -7,8 +7,8 @@ import Form from './components/Form';
 import { State } from './models/interface-models';
 
 class App extends Component<{}, State> {
-  constructor() {
-    super({});
+  constructor(props = {}) {
+    super(props);
 
     this.state = {
       personalDetails: {
