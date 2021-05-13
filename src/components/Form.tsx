@@ -26,50 +26,52 @@ function Form({
     <form>
       <section>
         <h2>Personal Details</h2>
-        <InputField
-          label='name'
-          value={name}
-          name='name'
-          onChange={onInputChange}
-        />
-        <InputField
-          label='title'
-          value={title}
-          name='title'
-          onChange={onInputChange}
-        />
-        <InputField
-          label='phone'
-          value={phone}
-          name='phone'
-          onChange={onInputChange}
-        />
-        <InputField
-          label='email'
-          value={email}
-          name='email'
-          onChange={onInputChange}
-        />
-        <InputField
-          label='location'
-          value={location}
-          name='location'
-          onChange={onInputChange}
-        />
-        <textarea
-          id='description'
-          rows={5}
-          placeholder='Description...'
-          value={description}
-          onChange={onTextAreaChange}
-        ></textarea>
+        <div className='section'>
+          <InputField
+            label='name'
+            value={name}
+            name='name'
+            onChange={onInputChange}
+          />
+          <InputField
+            label='title'
+            value={title}
+            name='title'
+            onChange={onInputChange}
+          />
+          <InputField
+            label='phone'
+            value={phone}
+            name='phone'
+            onChange={onInputChange}
+          />
+          <InputField
+            label='email'
+            value={email}
+            name='email'
+            onChange={onInputChange}
+          />
+          <InputField
+            label='location'
+            value={location}
+            name='location'
+            onChange={onInputChange}
+          />
+          <textarea
+            id='description'
+            rows={5}
+            placeholder='Description...'
+            value={description}
+            onChange={onTextAreaChange}
+          ></textarea>
+        </div>
       </section>
       <section>
         <h2>Work Experience</h2>
         {experience.map((item, index) => {
           const { company, position, startDate, endDate, desc } = item;
           return (
-            <div key={index}>
+            <div key={index} className='section'>
               <InputField
                 label='company'
                 value={company}
@@ -111,7 +113,7 @@ function Form({
         {education.map((item, index) => {
           const { course, university, startDate, endDate, desc } = item;
           return (
-            <div key={index}>
+            <div key={index} className='section'>
               <InputField
                 label='course / program'
                 id='input--course'

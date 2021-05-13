@@ -20,18 +20,8 @@ form {
   gap: 10px;
 }
 
-section {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-input,
-textarea {
-  border: 1px solid var(--grey);
-  border-radius: 3px;
-  font-size: 1rem;
-  padding: 5px;
+h2 {
+  margin-bottom: 5px;
 }
 
 label {
@@ -44,6 +34,29 @@ input::placeholder {
   text-transform: capitalize;
 }
 
+input,
+textarea {
+  border: 1px solid var(--grey);
+  border-radius: 3px;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.section:not(:last-child) {
+  margin-bottom: 10px;
+}
+
 .hidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -53,9 +66,4 @@ input::placeholder {
   padding: 0;
   position: absolute;
   width: 1px;
-}
-
-textarea {
-  width: 100%;
-  resize: none;
 }
