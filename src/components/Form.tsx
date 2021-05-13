@@ -1,4 +1,6 @@
 import InputField from './InputField';
+import ExperienceInputGroup from './ExperienceInputGroup';
+import EducationInputGroup from './EducationInputGroup';
 import './Form.css';
 import { State } from '../models/interface-models';
 import React from 'react';
@@ -69,85 +71,26 @@ function Form({
       <section>
         <h2>Work Experience</h2>
         {experience.map((item, index) => {
-          const { company, position, startDate, endDate, desc } = item;
           return (
-            <div key={index} className='group'>
-              <InputField
-                label='company'
-                value={company}
-                name='company'
-                onChange={onInputArrayChange('experience', index)}
-              />
-              <InputField
-                label='position'
-                value={position}
-                name='position'
-                onChange={onInputArrayChange('experience', index)}
-              />
-              <InputField
-                label='start date'
-                value={startDate}
-                name='startDate'
-                onChange={onInputArrayChange('experience', index)}
-              />
-              <InputField
-                label='end date'
-                value={endDate}
-                name='endDate'
-                onChange={onInputArrayChange('experience', index)}
-              />
-              {desc ? (
-                <InputField
-                  label='description'
-                  value={desc}
-                  name='desc'
-                  onChange={onInputArrayChange('experience', index)}
-                />
-              ) : null}
-            </div>
+            <ExperienceInputGroup
+              key={index}
+              item={item}
+              index={index}
+              onInputArrayChange={onInputArrayChange}
+            />
           );
         })}
       </section>
       <section>
         <h2>Education</h2>
         {education.map((item, index) => {
-          const { course, university, startDate, endDate, desc } = item;
           return (
-            <div key={index} className='group'>
-              <InputField
-                label='course / program'
-                id='input--course'
-                value={course}
-                name='course'
-                onChange={onInputArrayChange('education', index)}
-              />
-              <InputField
-                label='university'
-                value={university}
-                name='university'
-                onChange={onInputArrayChange('education', index)}
-              />
-              <InputField
-                label='start date'
-                value={startDate}
-                name='startDate'
-                onChange={onInputArrayChange('education', index)}
-              />
-              <InputField
-                label='end date'
-                value={endDate}
-                name='endDate'
-                onChange={onInputArrayChange('education', index)}
-              />
-              {desc ? (
-                <InputField
-                  label='description'
-                  value={desc}
-                  name='desc'
-                  onChange={onInputArrayChange('education', index)}
-                />
-              ) : null}
-            </div>
+            <EducationInputGroup
+              key={index}
+              item={item}
+              index={index}
+              onInputArrayChange={onInputArrayChange}
+            />
           );
         })}
       </section>
