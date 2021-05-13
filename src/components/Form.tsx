@@ -26,7 +26,7 @@ function Form({
     <form>
       <section>
         <h2>Personal Details</h2>
-        <div className='section'>
+        <div className='group'>
           <InputField
             label='name'
             value={name}
@@ -71,7 +71,7 @@ function Form({
         {experience.map((item, index) => {
           const { company, position, startDate, endDate, desc } = item;
           return (
-            <div key={index} className='section'>
+            <div key={index} className='group'>
               <InputField
                 label='company'
                 value={company}
@@ -113,7 +113,7 @@ function Form({
         {education.map((item, index) => {
           const { course, university, startDate, endDate, desc } = item;
           return (
-            <div key={index} className='section'>
+            <div key={index} className='group'>
               <InputField
                 label='course / program'
                 id='input--course'

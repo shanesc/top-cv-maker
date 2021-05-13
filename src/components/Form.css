@@ -47,13 +47,13 @@ textarea {
   resize: none;
 }
 
-.section {
+.group {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.section:not(:last-child) {
+.group:not(:last-child) {
   margin-bottom: 10px;
 }
 
