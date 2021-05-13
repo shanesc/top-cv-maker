@@ -35,6 +35,36 @@ class App extends Component<{}, State> {
     }));
   }
 
+  handleInputArrayChange = (
+    property: 'experience' | 'education',
+    index: number
+  ) => {
+    return (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { name, value } = e.target;
+
+      this.setState((prevState) => ({
+        ...prevState,
+        [property]: [
+          ...prevState[property].slice(0, index),
+          {
+            ...prevState[property][index],
+            [name]: value
+          },
+          ...prevState[property].slice(index + 1)
+        ]
+      }));
+    };
+  };
+
+  handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const { value } = e.target;
+
+    this.setState((prevState) => ({
+      ...prevState,
+      description: value
+    }));
+  };
+
   handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
@@ -67,7 +97,12 @@ class App extends Component<{}, State> {
     return (
       <>
         <div className='cv-form'>
-          <Form {...this.state} onChange={this.handleInputChange} />
+          <Form
+            {...this.state}
+            onInputChange={this.handleInputChange}
+            onInputArrayChange={this.handleInputArrayChange}
+            onTextAreaChange={this.handleTextAreaChange}
+          />
         </div>
         <div className='cv-container'>
           <PersonalInfo {...personalDetails} />
