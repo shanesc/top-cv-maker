@@ -10,7 +10,7 @@ interface Props {
   ) => (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-function ExperienceInputGroup({ item, index, onInputArrayChange }: Props) {
+function EducationInputGroup({ item, index, onInputArrayChange }: Props) {
   const { course, university, startDate, endDate, desc } = item;
   return (
     <div key={index} className='group'>
@@ -39,16 +39,14 @@ function ExperienceInputGroup({ item, index, onInputArrayChange }: Props) {
         name='endDate'
         onChange={onInputArrayChange('education', index)}
       />
-      {desc ? (
-        <InputField
-          label='description'
-          value={desc}
-          name='desc'
-          onChange={onInputArrayChange('education', index)}
-        />
-      ) : null}
+      <InputField
+        label='description'
+        value={desc || ''}
+        name='desc'
+        onChange={onInputArrayChange('education', index)}
+      />
     </div>
   );
 }
 
-export default ExperienceInputGroup;
+export default EducationInputGroup;

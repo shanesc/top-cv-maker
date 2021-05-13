@@ -38,14 +38,13 @@ function ExperienceInputGroup({ item, index, onInputArrayChange }: Props) {
         name='endDate'
         onChange={onInputArrayChange('experience', index)}
       />
-      {desc ? (
-        <InputField
-          label='description'
-          value={desc}
-          name='desc'
-          onChange={onInputArrayChange('experience', index)}
-        />
-      ) : null}
+
+      <InputField
+        label='description'
+        value={desc || ''}
+        name='desc'
+        onChange={onInputArrayChange('experience', index)}
+      />
     </div>
   );
 }
