@@ -12,6 +12,7 @@ interface Props extends State {
     index: number
   ) => (e: React.ChangeEvent<HTMLInputElement>) => void;
   onTextAreaChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onItemDelete: (property: 'experience' | 'education', id: number) => void;
 }
 
 function Form({
@@ -21,7 +22,8 @@ function Form({
   education,
   onInputChange,
   onInputArrayChange,
-  onTextAreaChange
+  onTextAreaChange,
+  onItemDelete
 }: Props) {
   const { name, title, phone, email, location } = personalDetails;
   return (
@@ -77,6 +79,7 @@ function Form({
               item={item}
               index={index}
               onInputArrayChange={onInputArrayChange}
+              onItemDelete={onItemDelete}
             />
           );
         })}
@@ -90,6 +93,7 @@ function Form({
               item={item}
               index={index}
               onInputArrayChange={onInputArrayChange}
+              onItemDelete={onItemDelete}
             />
           );
         })}

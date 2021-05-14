@@ -4,7 +4,7 @@ import PersonalInfo from './components/View/PersonalInfo';
 import './App.css';
 import ExperienceList from './components/View/ExperienceList';
 import Form from './components/Form';
-import { State } from './models/interface-models';
+import { State, Experience, Education } from './models/interface-models';
 
 class App extends Component<{}, State> {
   constructor(props = {}) {
@@ -77,6 +77,15 @@ class App extends Component<{}, State> {
     }));
   };
 
+  handleItemDelete = (property: 'experience' | 'education', id: number) => {
+    this.setState((prevState) => ({
+      ...prevState,
+      [property]: [...prevState[property]].filter(
+        (item: Experience | Education) => item.id !== id
+      )
+    }));
+  };
+
   render() {
     const {
       personalDetails,
@@ -102,6 +111,7 @@ class App extends Component<{}, State> {
             onInputChange={this.handleInputChange}
             onInputArrayChange={this.handleInputArrayChange}
             onTextAreaChange={this.handleTextAreaChange}
+            onItemDelete={this.handleItemDelete}
           />
         </div>
         <div className='cv__view'>

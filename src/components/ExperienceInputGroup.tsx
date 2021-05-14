@@ -8,10 +8,16 @@ interface Props {
     property: 'experience' | 'education',
     index: number
   ) => (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onItemDelete: (property: 'experience' | 'education', id: number) => void;
 }
 
-function ExperienceInputGroup({ item, index, onInputArrayChange }: Props) {
-  const { company, position, startDate, endDate, desc } = item;
+function ExperienceInputGroup({
+  item,
+  index,
+  onInputArrayChange,
+  onItemDelete
+}: Props) {
+  const { id, company, position, startDate, endDate, desc } = item;
   return (
     <div className='group'>
       <InputField
@@ -46,7 +52,9 @@ function ExperienceInputGroup({ item, index, onInputArrayChange }: Props) {
         onChange={onInputArrayChange('experience', index)}
       />
       <div className='btn-group'>
-        <button type='button'>Delete</button>
+        <button type='button' onClick={() => onItemDelete('experience', id)}>
+          Delete
+        </button>
         <button type='button' className='btn--add'>
           Add
         </button>
