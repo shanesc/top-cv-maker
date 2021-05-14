@@ -155,11 +155,18 @@ class App extends Component<{}, State> {
         <div className='cv__view'>
           <PersonalInfo {...personalDetails} />
           {description ? <div>{description}</div> : null}
-          <ExperienceList
-            heading='work experience'
-            experienceList={experienceList}
-          />
-          <ExperienceList heading='education' experienceList={educationList} />
+          {experienceList.length > 0 ? (
+            <ExperienceList
+              heading='work experience'
+              experienceList={experienceList}
+            />
+          ) : null}
+          {educationList.length > 0 ? (
+            <ExperienceList
+              heading='education'
+              experienceList={educationList}
+            />
+          ) : null}
         </div>
       </div>
     );
