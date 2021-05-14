@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/top-cv-maker/static/css/main.ea19ad2e.chunk.css",
+    "main.js": "/top-cv-maker/static/js/main.ffceef08.chunk.js",
+    "main.js.map": "/top-cv-maker/static/js/main.ffceef08.chunk.js.map",
+    "runtime-main.js": "/top-cv-maker/static/js/runtime-main.560aedf8.js",
+    "runtime-main.js.map": "/top-cv-maker/static/js/runtime-main.560aedf8.js.map",
+    "static/js/2.c4d67622.chunk.js": "/top-cv-maker/static/js/2.c4d67622.chunk.js",
+    "static/js/2.c4d67622.chunk.js.map": "/top-cv-maker/static/js/2.c4d67622.chunk.js.map",
+    "index.html": "/top-cv-maker/index.html",
+    "static/css/main.ea19ad2e.chunk.css.map": "/top-cv-maker/static/css/main.ea19ad2e.chunk.css.map",
+    "static/js/2.c4d67622.chunk.js.LICENSE.txt": "/top-cv-maker/static/js/2.c4d67622.chunk.js.LICENSE.txt",
+    "static/media/envelope-square-solid.bcb18744.svg": "/top-cv-maker/static/media/envelope-square-solid.bcb18744.svg",
+    "static/media/map-marker-alt-solid.d9fe5579.svg": "/top-cv-maker/static/media/map-marker-alt-solid.d9fe5579.svg",
+    "static/media/phone-square-solid.9c22c8e1.svg": "/top-cv-maker/static/media/phone-square-solid.9c22c8e1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.560aedf8.js",
+    "static/js/2.c4d67622.chunk.js",
+    "static/css/main.ea19ad2e.chunk.css",
+    "static/js/main.ffceef08.chunk.js"
+  ]
+}
