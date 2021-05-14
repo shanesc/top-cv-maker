@@ -106,7 +106,7 @@ class App extends Component<{}, State> {
         </div>
         <div className='cv__view'>
           <PersonalInfo {...personalDetails} />
-          <div>{description}</div>
+          {description ? <div>{description}</div> : null}
           <ExperienceList
             heading='work experience'
             experienceList={experienceList}
