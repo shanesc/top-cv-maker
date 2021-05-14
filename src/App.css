@@ -1,4 +1,11 @@
-.cv-container {
+.cv__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.cv__view {
   padding: 50px;
   width: 595px;
   height: 842px;
@@ -10,4 +17,8 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
+}
+
+.cv__form {
+  width: 595px;
 }

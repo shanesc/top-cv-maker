@@ -95,8 +95,8 @@ class App extends Component<{}, State> {
     });
 
     return (
-      <>
-        <div className='cv-form'>
+      <div className='cv__container'>
+        <div className='cv__form'>
           <Form
             {...this.state}
             onInputChange={this.handleInputChange}
@@ -104,7 +104,7 @@ class App extends Component<{}, State> {
             onTextAreaChange={this.handleTextAreaChange}
           />
         </div>
-        <div className='cv-container'>
+        <div className='cv__view'>
           <PersonalInfo {...personalDetails} />
           <div>{description}</div>
           <ExperienceList
@@ -113,7 +113,7 @@ class App extends Component<{}, State> {
           />
           <ExperienceList heading='education' experienceList={educationList} />
         </div>
-      </>
+      </div>
     );
   }
 }

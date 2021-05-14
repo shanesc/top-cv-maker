@@ -16,13 +16,12 @@ button {
 
 /* Styling */
 form {
-  width: 500px;
   border: 2px solid var(--dark-green);
   border-radius: 5px;
-  padding: 20px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 25px;
 }
 
 h2 {
@@ -59,7 +58,7 @@ textarea {
 }
 
 .group:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .hidden {
