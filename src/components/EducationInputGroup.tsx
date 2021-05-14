@@ -45,6 +45,12 @@ function EducationInputGroup({ item, index, onInputArrayChange }: Props) {
         name='desc'
         onChange={onInputArrayChange('education', index)}
       />
+      <div className='btn-group'>
+        <button type='button'>Delete</button>
+        <button type='button' className='btn--add'>
+          Add
+        </button>
+      </div>
     </div>
   );
 }
