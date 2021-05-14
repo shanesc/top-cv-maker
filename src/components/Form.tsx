@@ -12,7 +12,9 @@ interface Props extends State {
     index: number
   ) => (e: React.ChangeEvent<HTMLInputElement>) => void;
   onTextAreaChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  onItemDelete: (property: 'experience' | 'education', id: number) => void;
+  onItemDelete: (property: 'experience' | 'education', id: string) => void;
+  onExperienceItemAdd: () => void;
+  onEducationItemAdd: () => void;
 }
 
 function Form({
@@ -23,7 +25,9 @@ function Form({
   onInputChange,
   onInputArrayChange,
   onTextAreaChange,
-  onItemDelete
+  onItemDelete,
+  onExperienceItemAdd,
+  onEducationItemAdd
 }: Props) {
   const { name, title, phone, email, location } = personalDetails;
   return (
@@ -72,31 +76,53 @@ function Form({
       </section>
       <section>
         <h2>Work Experience</h2>
-        {experience.map((item, index) => {
-          return (
-            <ExperienceInputGroup
-              key={index}
-              item={item}
-              index={index}
-              onInputArrayChange={onInputArrayChange}
-              onItemDelete={onItemDelete}
-            />
-          );
-        })}
+        {experience.length === 0 ? (
+          <button
+            type='button'
+            className='btn--add'
+            onClick={onExperienceItemAdd}
+          >
+            Add
+          </button>
+        ) : (
+          experience.map((item, index) => {
+            return (
+              <ExperienceInputGroup
+                key={index}
+                item={item}
+                index={index}
+                onInputArrayChange={onInputArrayChange}
+                onItemDelete={onItemDelete}
+                onItemAdd={onExperienceItemAdd}
+              />
+            );
+          })
+        )}
       </section>
       <section>
         <h2>Education</h2>
-        {education.map((item, index) => {
-          return (
-            <EducationInputGroup
-              key={index}
-              item={item}
-              index={index}
-              onInputArrayChange={onInputArrayChange}
-              onItemDelete={onItemDelete}
-            />
-          );
-        })}
+        {education.length === 0 ? (
+          <button
+            type='button'
+            className='btn--add'
+            onClick={onEducationItemAdd}
+          >
+            Add
+          </button>
+        ) : (
+          education.map((item, index) => {
+            return (
+              <EducationInputGroup
+                key={index}
+                item={item}
+                index={index}
+                onInputArrayChange={onInputArrayChange}
+                onItemDelete={onItemDelete}
+                onItemAdd={onEducationItemAdd}
+              />
+            );
+          })
+        )}
       </section>
     </form>
   );

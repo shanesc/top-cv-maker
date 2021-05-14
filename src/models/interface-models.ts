@@ -7,7 +7,7 @@ export interface PersonalDetails {
 }
 
 export interface Experience {
-  id: number;
+  id: string;
   position: string;
   company: string;
   startDate: string;
@@ -16,7 +16,7 @@ export interface Experience {
 }
 
 export interface Education {
-  id: number;
+  id: string;
   course: string;
   university: string;
   startDate: string;

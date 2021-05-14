@@ -5,7 +5,7 @@ import './App.css';
 import ExperienceList from './components/View/ExperienceList';
 import Form from './components/Form';
 import { State, Experience, Education } from './models/interface-models';
-
+import { v4 as uuidv4 } from 'uuid';
 class App extends Component<{}, State> {
   constructor(props = {}) {
     super(props);
@@ -77,12 +77,48 @@ class App extends Component<{}, State> {
     }));
   };
 
-  handleItemDelete = (property: 'experience' | 'education', id: number) => {
+  handleItemDelete = (property: 'experience' | 'education', id: string) => {
     this.setState((prevState) => ({
       ...prevState,
       [property]: [...prevState[property]].filter(
         (item: Experience | Education) => item.id !== id
       )
+    }));
+  };
+
+  handleExperienceItemAdd = () => {
+    const id = uuidv4();
+    this.setState((prevState) => ({
+      ...prevState,
+      experience: [
+        ...prevState.experience,
+        {
+          id,
+          position: '',
+          company: '',
+          startDate: '',
+          endDate: '',
+          desc: ''
+        }
+      ]
+    }));
+  };
+
+  handleEducationItemAdd = () => {
+    const id = uuidv4();
+    this.setState((prevState) => ({
+      ...prevState,
+      education: [
+        ...prevState.education,
+        {
+          id,
+          course: '',
+          university: '',
+          startDate: '',
+          endDate: '',
+          desc: ''
+        }
+      ]
     }));
   };
 
@@ -112,6 +148,8 @@ class App extends Component<{}, State> {
             onInputArrayChange={this.handleInputArrayChange}
             onTextAreaChange={this.handleTextAreaChange}
             onItemDelete={this.handleItemDelete}
+            onExperienceItemAdd={this.handleExperienceItemAdd}
+            onEducationItemAdd={this.handleEducationItemAdd}
           />
         </div>
         <div className='cv__view'>
